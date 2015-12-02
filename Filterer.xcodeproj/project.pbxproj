@@ -13,6 +13,7 @@
 		4DC1999F1BB201E100AA75E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DC1999E1BB201E100AA75E7 /* Assets.xcassets */; };
 		4DC199A21BB201E100AA75E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC199A01BB201E100AA75E7 /* LaunchScreen.storyboard */; };
 		4DC199AA1BB2049F00AA75E7 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC199A91BB2049F00AA75E7 /* RGBAImage.swift */; };
+		8740A3151C0EE5CC003BFE75 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8740A3141C0EE5CC003BFE75 /* ImageProcessor.swift */; };
 		878107E41C0B010C005BBBC3 /* Assignment Instructions in Resources */ = {isa = PBXBuildFile; fileRef = 878107E31C0B010C005BBBC3 /* Assignment Instructions */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		4DC199A11BB201E100AA75E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DC199A31BB201E100AA75E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DC199A91BB2049F00AA75E7 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
+		8740A3141C0EE5CC003BFE75 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		878107E31C0B010C005BBBC3 /* Assignment Instructions */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Assignment Instructions"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,14 +60,15 @@
 		4DC199961BB201E100AA75E7 /* Filterer */ = {
 			isa = PBXGroup;
 			children = (
+				878107E31C0B010C005BBBC3 /* Assignment Instructions */,
 				4DC199971BB201E100AA75E7 /* AppDelegate.swift */,
 				4DC199991BB201E100AA75E7 /* ViewController.swift */,
+				8740A3141C0EE5CC003BFE75 /* ImageProcessor.swift */,
 				4DC199A91BB2049F00AA75E7 /* RGBAImage.swift */,
 				4DC1999B1BB201E100AA75E7 /* Main.storyboard */,
 				4DC1999E1BB201E100AA75E7 /* Assets.xcassets */,
 				4DC199A01BB201E100AA75E7 /* LaunchScreen.storyboard */,
 				4DC199A31BB201E100AA75E7 /* Info.plist */,
-				878107E31C0B010C005BBBC3 /* Assignment Instructions */,
 			);
 			path = Filterer;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				4DC1999A1BB201E100AA75E7 /* ViewController.swift in Sources */,
 				4DC199AA1BB2049F00AA75E7 /* RGBAImage.swift in Sources */,
+				8740A3151C0EE5CC003BFE75 /* ImageProcessor.swift in Sources */,
 				4DC199981BB201E100AA75E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

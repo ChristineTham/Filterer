@@ -56,6 +56,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="zgf-3k-aR7"/>
                                                 </constraints>
                                                 <state key="normal" title="Compare"/>
+                                                <connections>
+                                                    <action selector="onCompare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wjv-jg-vyK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-ry-Zqw">
                                                 <rect key="frame" x="450" y="0.0" width="150" height="44"/>
@@ -113,26 +116,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Red"/>
+                                    <connections>
+                                        <action selector="onRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="faU-Gc-aps"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axt-GK-a6m">
                                     <rect key="frame" x="48" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Green"/>
+                                    <connections>
+                                        <action selector="onGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjK-B2-WIe"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNq-be-bSy">
                                     <rect key="frame" x="96" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Blue"/>
+                                    <connections>
+                                        <action selector="onBlue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6S-cl-T4x"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-ef-bpc">
                                     <rect key="frame" x="144" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Yellow"/>
+                                    <connections>
+                                        <action selector="onYellow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dG2-5a-ccF"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P8-VM-YCw">
                                     <rect key="frame" x="192" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Purple"/>
+                                    <connections>
+                                        <action selector="onPurple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Htt-OH-Q2x"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <animations/>
