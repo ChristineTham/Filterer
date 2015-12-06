@@ -117,6 +117,7 @@ func redFilter(inout rgbaImage: RGBAImage, parameter: Float) -> Bool {
             
             var pixel = rgbaImage.pixels[index]
             
+            pixel.red = UInt8(max(0, min(255, Float(pixel.red) * parameter)))
             pixel.green = 0
             pixel.blue = 0
             rgbaImage.pixels[index] = pixel
@@ -134,6 +135,7 @@ func greenFilter(inout rgbaImage: RGBAImage, parameter: Float) -> Bool {
             var pixel = rgbaImage.pixels[index]
             
             pixel.red = 0
+            pixel.green = UInt8(max(0, min(255, Float(pixel.green) * parameter)))
             pixel.blue = 0
             rgbaImage.pixels[index] = pixel
         }
@@ -151,6 +153,7 @@ func blueFilter(inout rgbaImage: RGBAImage, parameter: Float) -> Bool {
             
             pixel.red = 0
             pixel.green = 0
+            pixel.blue = UInt8(max(0, min(255, Float(pixel.blue) * parameter)))
             rgbaImage.pixels[index] = pixel
         }
     }
@@ -165,7 +168,7 @@ func yellowFilter(inout rgbaImage: RGBAImage, parameter: Float) -> Bool {
             
             var pixel = rgbaImage.pixels[index]
             
-            pixel.red = min(pixel.red, pixel.green)
+            pixel.red = UInt8(max(0, min(255, Float(min(pixel.red, pixel.green)) * parameter)))
             pixel.green = pixel.red
             pixel.blue = 0
             rgbaImage.pixels[index] = pixel
@@ -182,7 +185,7 @@ func purpleFilter(inout rgbaImage: RGBAImage, parameter: Float) -> Bool {
             
             var pixel = rgbaImage.pixels[index]
             
-            pixel.red = min(pixel.red, pixel.blue)
+            pixel.red = UInt8(max(0, min(255, Float(min(pixel.red, pixel.blue)) * parameter)))
             pixel.blue = pixel.red
             pixel.green = 0
             rgbaImage.pixels[index] = pixel
@@ -212,10 +215,10 @@ func loadPredefinedFilters() {
     predefinedFilters.addFilter(ImageFilter(name: "Contrast -50%", parameter: Float(-0.50), filter: contrastFilter))
     
     // add colour filter instances
-    predefinedFilters.addFilter(ImageFilter(name: "red", parameter: 0.0, filter: redFilter))
-    predefinedFilters.addFilter(ImageFilter(name: "green", parameter: 0.0, filter: greenFilter))
-    predefinedFilters.addFilter(ImageFilter(name: "blue", parameter: 0.0, filter: blueFilter))
-    predefinedFilters.addFilter(ImageFilter(name: "yellow", parameter: 0.0, filter: yellowFilter))
-    predefinedFilters.addFilter(ImageFilter(name: "purple", parameter: 0.0, filter: purpleFilter))
+    predefinedFilters.addFilter(ImageFilter(name: "Red", parameter: 1.0, filter: redFilter))
+    predefinedFilters.addFilter(ImageFilter(name: "Green", parameter: 1.0, filter: greenFilter))
+    predefinedFilters.addFilter(ImageFilter(name: "Blue", parameter: 1.0, filter: blueFilter))
+    predefinedFilters.addFilter(ImageFilter(name: "Yellow", parameter: 1.0, filter: yellowFilter))
+    predefinedFilters.addFilter(ImageFilter(name: "Purple", parameter: 1.0, filter: purpleFilter))
 
 }
