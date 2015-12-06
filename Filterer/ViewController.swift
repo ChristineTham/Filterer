@@ -22,7 +22,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var filterButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var compareButton: UIButton!
-    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     
     @IBOutlet var overlayView: UIView!
  
@@ -34,6 +33,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet var filterSlider: UISlider!
     
+    // let tapRec = UITapGestureRecognizer()
+    
     func adjustFilterIcon(button: UIButton) {
         var rgbaImage = RGBAImage(image: button.currentImage!)
         
@@ -41,6 +42,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         button.setImage(rgbaImage!.toUIImage(), forState: .Normal)
     }
 
+    // Disable the compare and edit button when a filter hasn’t been selected.
+    // · If the user hasn’t selected a filter yet, then the image hasn’t changed, and the compare button isn’t useful. Disable the button when its function is not needed.
     func setImage(image: UIImage) {
         imageView.image = image
         originalImage = image
@@ -77,11 +80,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         setImage(imageView.image!)
         
-        // Disable the compare button when a filter hasn’t been selected.
-        // · If the user hasn’t selected a filter yet, then the image hasn’t changed, and the compare button isn’t useful. Disable the button when its function is not needed.
-        compareButton.enabled = false
-        //tapRecognizer.addTarget(self, action: "imageView")
-        imageView.addGestureRecognizer(tapRecognizer)
+        // tapRec.addTarget(self, action: "onTap")
+        // imageView.addGestureRecognizer(tapRec)
+        imageView.userInteractionEnabled = true
     }
 
     // MARK: Share
@@ -356,17 +357,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // Make it easier to compare the original and filtered images.
     // · When the user touches the image, toggle between the filtered, and original images temporarily.
     // · When the user lifts their finger, toggle back.
-    @IBAction func onImageTap(sender: UITapGestureRecognizer) {
-        print("tap")
+    // func onTap(sender: UITapGestureRecognizer) {
+    @IBAction func onImagePress(sender: UILongPressGestureRecognizer) {
+        if currentFilter != nil {
+            if sender.state == .Began {
+                imageView.image = originalImage!
+            }
+            if sender.state == .Ended {
+                imageView.image = filteredImage!
+            }
 
-        if sender.state == .Began {
-            imageView.image = originalImage!
-            print("tap begin")
-        }
-        
-        if sender.state == .Ended {
-            imageView.image = filteredImage!
-            print("tap end")
         }
     }
 }
